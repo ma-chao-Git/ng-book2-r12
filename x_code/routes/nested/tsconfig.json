@@ -1,0 +1,41 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "app/ts/app.hash.ts",
+        "app/ts/app.ts",
+        "app/ts/ChatExampleData.ts",
+        "app/ts/components/HomeComponent.ts",
+        "app/ts/components/products/ByIdComponent.ts",
+        "app/ts/components/products/InterestComponent.ts",
+        "app/ts/components/products/MainComponent.ts",
+        "app/ts/components/products/SportifyComponent.ts",
+        "app/ts/components/ProductsComponent.ts",
+        "app/ts/util/RxPipe.ts",
+        "app/ts/util/util.ts",
+        "app/typings/app.d.ts",
+        "app/typings/ng2.d.ts",
+        "test/app.spec.ts",
+        "test/calculator.ts",
+        "test/services/MessagesService.spec.ts",
+        "test/services/ThreadsService.spec.ts",
+        "typings/moment/moment-node.d.ts",
+        "typings/moment/moment.d.ts",
+        "typings/tsd.d.ts",
+        "typings/underscore/underscore.d.ts"
+    ],
+    "exclude": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ng1-pinterest",
+  "version": "0.0.1",
+  "description": "toy pinterest clone in ng1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nate Murray <nate@fullstack.io>",
+  "dependencies": {
+    "karma": "^0.12.22",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "protractor": "^1.8.0"
+  },
+  "devDependencies": {
+    "bower": "^1.5.3",
+    "static": "^2.0.0"
+  }
+}
