@@ -7,8 +7,6 @@ import {Component, View, OnInit, NgFor, NgIf} from "angular2/angular2";
 import {Response} from "angular2/http";
 import {
   Router,
-  RouterOutlet,
-  RouteConfig,
   RouterLink,
   RouteParams,
 } from "angular2/router";
@@ -29,7 +27,9 @@ import {SpotifyService} from "services/SpotifyService";
   </p>
 
   <p>
-    <input type="text" [value]="query" #newquery (keydown.enter)="submit(newquery.value)">
+    <input type="text" #newquery
+      [value]="query"
+      (keydown.enter)="submit(newquery.value)">
     <button (click)="submit(newquery.value)">Search</button>
   </p>
 
@@ -82,20 +82,20 @@ export class SearchComponent implements OnInit {
     this.search();
   }
 
-  submit(query): void {
-    this.router.navigate(['/Search', {query: query}]);
+  submit(query: string): void {
+    this.router.navigate(["/Search", {query: query}]);
     this.search();
   }
 
-  search() {
-    this.query = this.routeParams.get('query');
+  search(): void {
+    this.query = this.routeParams.get("query");
     if (!this.query) {
       return;
     }
     this.spotify.searchTrack(this.query).then(this.saveResults.bind(this));
   }
 
-  saveResults(res: Response) {
+  saveResults(res: Response): void {
     this.results = res.json();
   }
 }

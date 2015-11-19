@@ -10,24 +10,24 @@ import {FormBuilder, Validators, ControlGroup} from "angular2/angular2";
 /* 
  * Our Demos
  */
-import {DemoFormSku} from "./forms/demo_form_sku"
-import {DemoFormSkuBuilder} from "./forms/demo_form_sku_with_builder"
-import {DemoFormWithValidationsShorthand} from "./forms/demo_form_with_validations_shorthand"
-import {DemoFormWithValidationsExplicit} from "./forms/demo_form_with_validations_explicit"
-import {DemoFormWithCustomValidations} from "./forms/demo_form_with_custom_validations"
-import {DemoFormWithEvents} from "./forms/demo_form_with_events"
-import {DemoFormNgModel} from "./forms/demo_form_ng_model"
+import {DemoFormSku} from "./forms/demo_form_sku";
+import {DemoFormSkuBuilder} from "./forms/demo_form_sku_with_builder";
+import {DemoFormWithValidationsShorthand} from "./forms/demo_form_with_validations_shorthand";
+import {DemoFormWithValidationsExplicit} from "./forms/demo_form_with_validations_explicit";
+import {DemoFormWithCustomValidations} from "./forms/demo_form_with_custom_validations";
+import {DemoFormWithEvents} from "./forms/demo_form_with_events";
+import {DemoFormNgModel} from "./forms/demo_form_ng_model";
 
 /*
  * Webpack
  */
-require("css/styles.css")
+require("css/styles.css");
 
 @Component({
   selector: 'forms-demo-app'
 })
 @View({
-  directives: [DemoFormSku, 
+  directives: [DemoFormSku,
                DemoFormSkuBuilder, 
                DemoFormWithValidationsShorthand, 
                DemoFormWithValidationsExplicit,

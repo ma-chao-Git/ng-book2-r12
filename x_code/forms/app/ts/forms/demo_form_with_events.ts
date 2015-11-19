@@ -47,17 +47,17 @@ export class DemoFormWithEvents {
 
     this.sku = this.myForm.controls['sku'];
 
-    this.sku.valueChanges.observer({
-      next: (value) => {
+    this.sku.valueChanges.subscribe(
+      (value) => {
         console.log("sku changed to: ", value);
       }
-    })
+    );
 
-    this.myForm.valueChanges.observer({
-      next: (value) => {
+    this.myForm.valueChanges.subscribe(
+      (value) => {
         console.log("form changed to: ", value);
       }
-    })
+    );
 
   }
 

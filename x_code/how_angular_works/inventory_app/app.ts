@@ -78,7 +78,7 @@ class PriceDisplay {
 @Component({
   selector: 'product-row',
   inputs: ['product'],
-  events: ['click']
+  outputs: ['click']
 })
 @View({
   directives: [ProductImage, ProductDepartment, PriceDisplay],

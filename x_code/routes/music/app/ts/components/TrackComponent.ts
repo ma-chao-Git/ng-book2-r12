@@ -3,9 +3,9 @@
 /*
  * Angular
  */
-import {Component, View, OnInit, ElementRef, NgIf} from "angular2/angular2";
+import {Component, View, NgIf} from "angular2/angular2";
 import {Response} from "angular2/http";
-import {RouteParams, RouterLink, LocationStrategy} from "angular2/router";
+import {RouteParams, LocationStrategy} from "angular2/router";
 
 /*
  * Services
@@ -16,7 +16,7 @@ import {SpotifyService} from "services/SpotifyService";
   selector: "track"
 })
 @View({
-  directives: [RouterLink, NgIf],
+  directives: [NgIf],
   template: `
   <div *ng-if="track">
     <p>
@@ -36,7 +36,7 @@ import {SpotifyService} from "services/SpotifyService";
   `
 })
 export class TrackComponent {
-  id: string
+  id: string;
   track: Object;
 
   constructor(public routeParams: RouteParams, public spotify: SpotifyService,
@@ -54,6 +54,5 @@ export class TrackComponent {
 
   renderTrack(res: Response): void {
     this.track = res.json();
-    console.log('track', this.track);
   }
 }

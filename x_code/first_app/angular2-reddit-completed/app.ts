@@ -34,7 +34,7 @@ class Article {
 
 @Component({
   selector: 'reddit-article',
-  properties: ['article']
+  inputs: ['article']
 
 
 })

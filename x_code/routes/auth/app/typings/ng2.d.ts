@@ -14,3 +14,4 @@ declare module "angular2/pipes" {
   }
 }
 
+declare var require: any;

@@ -32,7 +32,7 @@ import {SpotifyService} from "services/SpotifyService";
       <h3>Tracks</h3>
       <ol>
         <li *ng-for="#t of album.tracks.items">
-          <a [router-link]="['/tracks', {id: t.id}]">
+          <a [router-link]="['/Tracks', {id: t.id}]">
             {{ t.name }}
           </a>
         </li>

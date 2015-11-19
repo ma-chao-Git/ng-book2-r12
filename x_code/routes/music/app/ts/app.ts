@@ -6,21 +6,19 @@
 import {
   Component,
   View,
-  NgIf,
-  bind,
+  provide,
   bootstrap
 } from "angular2/angular2";
-import {HTTP_BINDINGS} from "angular2/http";
+import {HTTP_PROVIDERS} from "angular2/http";
 import {
   APP_BASE_HREF,
   ROUTER_DIRECTIVES,
-  ROUTER_BINDINGS,
+  ROUTER_PROVIDERS,
   ROUTER_PRIMARY_COMPONENT,
   HashLocationStrategy,
   LocationStrategy,
   Router,
   RouteConfig,
-  RouteParams,
 } from "angular2/router";
 
 /*
@@ -34,7 +32,7 @@ import {AlbumComponent} from "components/AlbumComponent";
 /*
  * Services
  */
-import {SPOTIFY_BINDINGS} from "services/SpotifyService";
+import {SPOTIFY_PROVIDERS} from "services/SpotifyService";
 
 /*
  * Webpack
@@ -45,7 +43,7 @@ require("css/styles.scss");
   selector: "router-app"
 })
 @View({
-  directives: [ROUTER_DIRECTIVES, NgIf],
+  directives: [ROUTER_DIRECTIVES],
   template: `
   <router-outlet></router-outlet>
   `
@@ -65,10 +63,10 @@ class RoutesDemoApp {
 }
 
 bootstrap(RoutesDemoApp, [
-  ROUTER_BINDINGS,
-  HTTP_BINDINGS,
-  SPOTIFY_BINDINGS,
-  bind(ROUTER_PRIMARY_COMPONENT).toValue(RoutesDemoApp),
-  bind(APP_BASE_HREF).toValue('/'),
-  bind(LocationStrategy).toClass(HashLocationStrategy)
+  ROUTER_PROVIDERS,
+  HTTP_PROVIDERS,
+  SPOTIFY_PROVIDERS,
+  provide(ROUTER_PRIMARY_COMPONENT, {useValue: RoutesDemoApp}),
+  provide(APP_BASE_HREF,            {useValue: "/"}),
+  provide(LocationStrategy,         {useClass: HashLocationStrategy})
 ]);

@@ -3,11 +3,11 @@
 /*
  * Angular
  */
-import {bind, Component, bootstrap, View} from "angular2/angular2";
+import {provide, Component, bootstrap, View} from "angular2/angular2";
 import {
   APP_BASE_HREF,
   ROUTER_DIRECTIVES,
-  ROUTER_BINDINGS,
+  ROUTER_PROVIDERS,
   ROUTER_PRIMARY_COMPONENT,
   HashLocationStrategy,
   LocationStrategy,
@@ -60,7 +60,7 @@ class RoutesDemoApp {
 }
 
 bootstrap(RoutesDemoApp, [
-  ROUTER_BINDINGS,
-  bind(ROUTER_PRIMARY_COMPONENT).toValue(RoutesDemoApp),
-  bind(APP_BASE_HREF).toValue('/')
+  ROUTER_PROVIDERS,
+  provide(ROUTER_PRIMARY_COMPONENT, {useValue: RoutesDemoApp}),
+  provide(APP_BASE_HREF, {useValue: '/'})
 ]);

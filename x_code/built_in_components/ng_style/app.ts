@@ -28,10 +28,10 @@ import {
     <div [ng-style]="style"></div>
 
     <div>
-      <span [ng-style]="{color: colorinput.value}">{{ colorinput.value }} text</span>
+      <span [ng-style]="{color: color}">{{ color }} text</span>
     </div>
 
-    <div [style.background-color]="colorinput.value" style="color: white;">{{ colorinput.value }} background</div>
+    <div [style.background-color]="color" style="color: white;">{{ color }} background</div>
 
     <div><input type="text" name="color" value="{{color}}" #colorinput></div>
     <div><input type="text" name="fontSize" value="{{fontSize}}" #fontinput></div>

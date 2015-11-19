@@ -3,10 +3,11 @@
 /*
  * Angular
  */
-import {bind, Component, bootstrap, View} from "angular2/angular2";
+import {provide, Component, bootstrap, View} from "angular2/angular2";
 import {
   APP_BASE_HREF,
-  ROUTER_BINDINGS,
+  ROUTER_PROVIDERS,
+  ROUTER_PRIMARY_COMPONENT,
   HashLocationStrategy, // <-- added
   LocationStrategy,     // <-- added
   Router,
@@ -59,7 +60,8 @@ class RoutesDemoApp {
 }
 
 bootstrap(RoutesDemoApp, [
-  ROUTER_BINDINGS,
-  bind(APP_BASE_HREF).toValue('/'),
-  bind(LocationStrategy).toClass(HashLocationStrategy) // <-- added
+  ROUTER_PROVIDERS,
+  provide(ROUTER_PRIMARY_COMPONENT, {useValue: RoutesDemoApp}),
+  provide(APP_BASE_HREF, {useValue: '/'}),
+  provide(LocationStrategy, {useClass: HashLocationStrategy}) // <-- added
 ]);

@@ -97,7 +97,7 @@ function makeConfig(options) {
       "file-loader!vendor/traceur-runtime-0.0.87.js": "traceur",
       "file-loader!vendor/system-0.16.11.js": "systemjs",
       "file-loader!vendor/es6-module-loader-0.16.6.js": "es6ModuleLoader",
-      "file-loader!vendor/angular2.dev.2.0.0-alpha.39.js": "angular",
+      "file-loader!vendor/angular2.dev.2.0.0-alpha.46.js": "angular",
       "file-loader!vendor/bootstrap@3.3.5.min.css": "bootstrap"
     },
     module: {

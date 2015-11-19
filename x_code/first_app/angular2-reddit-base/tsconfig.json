@@ -1,5 +1,4 @@
 {
-    "version": "1.5.0",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
@@ -7,7 +6,8 @@
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
     "filesGlob": [
         "./**/*.ts",
@@ -15,10 +15,6 @@
     ],
     "files": [
         "./app.ts",
-        "./typings/angular2/angular2.d.ts",
-        "./typings/es6-promise/es6-promise.d.ts",
-        "./typings/rx/rx-lite.d.ts",
-        "./typings/rx/rx.d.ts",
-        "./typings/tsd.d.ts"
+        "./typings/angular2/angular2.d.ts"
     ]
 }

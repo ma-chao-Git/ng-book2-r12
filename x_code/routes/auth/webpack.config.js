@@ -6,7 +6,7 @@ var webpack             = require('webpack'),
     WebpackNotifierPlugin = require('webpack-notifier'),
     ExtractTextPlugin   = require("extract-text-webpack-plugin");
 
- 
+
 /**
  * Support for extra commandline arguments
  */
@@ -16,7 +16,7 @@ var argv = require('optimist')
             // .alias('m','minify')
             // .alias('t','hotComponents').default('t', false)
             .argv;
- 
+
 /**
  * Useful variables
  */
@@ -30,11 +30,11 @@ var vendorRoot = __dirname + "/app/js/vendor";
 var appDir = __dirname + "/app";
 
 var entry = ["app.ts"]
- 
+
 if (isDevServer) {
   entry.unshift("webpack-dev-server/client?http://"+reloadHost+":8080");
 }
- 
+
 function makeConfig(options) {
   return {
     cache: true,
@@ -59,7 +59,7 @@ function makeConfig(options) {
     },
     devtool: 'source-map',
     recordsPath: path.resolve('.webpack.json'),
- 
+
     devServer: {
       inline: true,
       colors: true,
@@ -71,7 +71,7 @@ function makeConfig(options) {
       filename: "[name].js",
       publicPath: "/", // isDevServer ? './': './',
       chunkFilename: "[id].bundle.js",
- 
+
       // Hot Module Replacement settings:
       hotUpdateMainFilename: "updates/[hash].update.json",
       hotUpdateChunkFilename: "updates/[hash].[id].update.js"
@@ -131,12 +131,12 @@ function makeConfig(options) {
                                      '?outputStyle=expanded&' +
                                      'root='+appDir+'&' +
                                      '&includePaths[]'+npmRoot + '&' +
-                                     '&includePaths[]'+appDir 
+                                     '&includePaths[]'+appDir
                                     ]},
         { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,         loader: "url-loader" },
         { test: /\.html$/,    loader: "raw" },
         { test: /^index\.html$/, loader: "file-loader?name=[path][name].[ext]" },
-        { test: /\.ts$/, loader: 'awesome-typescript-loader?ignoreWarnings[]=2304', exclude: [ /test/, /node_modules/]},
+        { test: /\.ts$/, loader: 'ts', exclude: [ /test/, /node_modules/]},
         { test: /vendor\/.*\.(css|js)/, loader: 'file-loader?name=[path][name].[ext]', exclude: [/node_modules/]},
         { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,    loader: "file-loader?mimetype=application/font-woff&name=[path][name].[ext]" },
         { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,         loader: "file-loader?mimetype=application/x-font-ttf&name=[path][name].[ext]" },
@@ -157,6 +157,6 @@ function makeConfig(options) {
 }
 
 var config = makeConfig(argv)
- 
+
 console.log(require('util').inspect(config, {depth: 10}))
 module.exports = config;

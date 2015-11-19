@@ -17,22 +17,16 @@
     "files": [
         "app/ts/app.hash.ts",
         "app/ts/app.ts",
-        "app/ts/ChatExampleData.ts",
         "app/ts/components/AboutComponent.ts",
         "app/ts/components/ContactComponent.ts",
         "app/ts/components/HomeComponent.ts",
-        "app/ts/util/RxPipe.ts",
-        "app/ts/util/util.ts",
         "app/typings/app.d.ts",
         "app/typings/ng2.d.ts",
-        "test/app.spec.ts",
-        "test/calculator.ts",
-        "test/services/MessagesService.spec.ts",
-        "test/services/ThreadsService.spec.ts",
         "typings/moment/moment-node.d.ts",
         "typings/moment/moment.d.ts",
         "typings/tsd.d.ts",
         "typings/underscore/underscore.d.ts"
     ],
+    "compileOnSave": false,
     "exclude": []
 }

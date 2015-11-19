@@ -1,6 +1,6 @@
 /// <reference path="../../typings/app.d.ts" />
 
-import {Injectable, bind} from "angular2/angular2";
+import {Injectable, provide} from "angular2/angular2";
 
 @Injectable()
 export class AuthService {
@@ -26,6 +26,6 @@ export class AuthService {
   }
 }
 
-export var AUTH_BINDINGS: Array<any> = [
-  bind(AuthService).toClass(AuthService)
+export var AUTH_PROVIDERS: Array<any> = [
+  provide(AuthService, {useClass: AuthService})
 ];

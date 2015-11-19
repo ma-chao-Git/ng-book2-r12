@@ -50,6 +50,5 @@ export class ArtistComponent implements OnInit {
 
   renderArtist(res: Response): void {
     this.artist = res.json();
-    console.log('artist', this.artist);
   }
 }

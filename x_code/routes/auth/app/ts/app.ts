@@ -3,11 +3,11 @@
 /*
  * Angular
  */
-import {bind, Component, bootstrap, View} from "angular2/angular2";
+import {provide, Component, bootstrap, View} from "angular2/angular2";
 import {
   APP_BASE_HREF,
   ROUTER_DIRECTIVES,
-  ROUTER_BINDINGS,
+  ROUTER_PROVIDERS,
   ROUTER_PRIMARY_COMPONENT,
   HashLocationStrategy,
   LocationStrategy,
@@ -28,7 +28,7 @@ import {ProtectedComponent} from "components/ProtectedComponent";
 /*
  * Services
  */
-import {AUTH_BINDINGS} from "services/AuthService";
+import {AUTH_PROVIDERS} from "services/AuthService";
 
 /*
  * Webpack
@@ -78,9 +78,9 @@ class RoutesDemoApp {
 }
 
 bootstrap(RoutesDemoApp, [
-  ROUTER_BINDINGS,
-  AUTH_BINDINGS,
-  bind(ROUTER_PRIMARY_COMPONENT).toValue(RoutesDemoApp),
-  bind(APP_BASE_HREF).toValue('/'),
-  bind(LocationStrategy).toClass(HashLocationStrategy)
+  ROUTER_PROVIDERS,
+  AUTH_PROVIDERS,
+  provide(ROUTER_PRIMARY_COMPONENT, {useValue: RoutesDemoApp}),
+  provide(APP_BASE_HREF, {useValue: '/'}),
+  provide(LocationStrategy, {useClass: HashLocationStrategy})
 ]);
