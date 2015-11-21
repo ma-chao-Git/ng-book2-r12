@@ -1,0 +1,30 @@
+{
+  "name": "ng-book2-r12",
+  "version": "1.0.0",
+  "description": "examples from the book",
+  "main": "app.js",
+  "dependencies": {
+    "traceur-runtime": "^0.0.59"
+  },
+  "devDependencies": {
+    "angular2": "^2.0.0-alpha.46",
+    "systemjs": "^0.19.6",
+    "traceur-runtime": "0.0.59"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gzoppelt/ng-book2-r12.git"
+  },
+  "keywords": [
+    "ng2"
+  ],
+  "author": "Guenther",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gzoppelt/ng-book2-r12/issues"
+  },
+  "homepage": "https://github.com/gzoppelt/ng-book2-r12"
+}
